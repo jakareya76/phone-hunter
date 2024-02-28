@@ -16,13 +16,14 @@
 
     <main class="py-20">
       <section class="container mx-auto">
+        <!-- search -->
         <div class="max-w-2xl mx-auto my-5">
-          <label class="input input-bordered flex items-center p-0">
+          <label class="flex items-center p-0 input input-bordered">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 16"
               fill="currentColor"
-              class="w-4 h-4 opacity-70 ml-5 mr-2"
+              class="w-4 h-4 ml-5 mr-2 opacity-70"
             >
               <path
                 fill-rule="evenodd"
@@ -38,7 +39,7 @@
             />
 
             <button
-              class="bg-blue-500 text-white px-5 py-2 rounded mr-1"
+              class="px-5 py-2 mr-1 text-white bg-blue-500 rounded"
               onclick="handleSearch()"
             >
               Search
@@ -46,11 +47,20 @@
           </label>
         </div>
 
-        <div class="flex items-center justify-center">
+        <!-- result -->
+        <div class="flex flex-col items-center justify-center gap-5">
+          <div id="loading-spinner" class="hidden my-20 text-center">
+            <span class="loading loading-ring loading-lg"></span>
+          </div>
+
           <div
             id="phone-container"
             class="grid grid-cols-1 gap-5 lg:grid-cols-2 xl:grid-cols-3"
           ></div>
+
+          <div id="show-all-container" class="hidden mt-5">
+            <button class="btn btn-primary">Show All Phones</button>
+          </div>
         </div>
       </section>
     </main>
